@@ -1,5 +1,7 @@
 <resources>
- <color name="background">#111310</color><color name="surface">#191C18</color><color name="surface_alt">#20241F</color>
- <color name="text_primary">#F1F3EE</color><color name="text_secondary">#C5C9C0</color><color name="text_muted">#92988D</color><color name="border">#30352E</color>
- <color name="accent">#A8C5AC</color><color name="priority_high_surface">#3B2523</color><color name="priority_medium_surface">#3A3220</color><color name="priority_low_surface">#213529</color><color name="task_done">#242824</color>
+ <color name="background">#11131A</color><color name="surface">#1A1D26</color><color name="surface_alt">#252936</color>
+ <color name="text_primary">#F5F6FA</color><color name="text_secondary">#C7CBD6</color><color name="text_muted">#8F96A6</color><color name="border">#2C3140</color>
+ <color name="accent">#8174FF</color><color name="tag_surface">#193B32</color>
+ <color name="priority_high">#FF717A</color><color name="priority_medium">#FFAE3D</color><color name="priority_low">#38D69A</color>
+ <color name="priority_high_surface">#44272B</color><color name="priority_medium_surface">#44351E</color><color name="priority_low_surface">#1D3B31</color><color name="task_done">#20232D</color>
 </resources>
