@@ -1,0 +1,8 @@
+package com.amit.colortodo;
+import android.content.*;import android.graphics.Paint;import android.widget.*;import java.util.*;
+public class TodoWidgetService extends RemoteViewsService {
+ @Override public RemoteViewsFactory onGetViewFactory(Intent intent){return new Factory(getApplicationContext());}
+ static class Factory implements RemoteViewsFactory {
+  final Context c;ArrayList<TaskStore.Task> tasks=new ArrayList<>();Factory(Context c){this.c=c;}public void onCreate(){}public void onDataSetChanged(){tasks=TaskStore.load(c);tasks.sort(Comparator.comparingLong(TaskStore::weekStartFor).thenComparing(t->t.done));}public void onDestroy(){}public int getCount(){return tasks.size();}public RemoteViews getViewAt(int p){if(p<0||p>=tasks.size())return null;TaskStore.Task t=tasks.get(p);RemoteViews v=new RemoteViews(c.getPackageName(),R.layout.widget_task_item);v.setTextViewText(R.id.widgetTaskTitle,(t.done?"✓  ":"○  ")+t.text);v.setTextViewText(R.id.widgetTaskMeta,TaskStore.weekLabel(TaskStore.weekStartFor(t))+(t.due.isEmpty()?"":"  •  "+TaskStore.displayDate(t.due)));v.setTextColor(R.id.widgetTaskTitle,c.getColor(t.done?R.color.text_muted:R.color.text_primary));v.setInt(R.id.widgetTaskTitle,"setPaintFlags",t.done?Paint.STRIKE_THRU_TEXT_FLAG:0);Intent fill=new Intent();fill.putExtra(TodoWidget.EXTRA_ID,t.id);v.setOnClickFillInIntent(R.id.widgetTaskRow,fill);return v;}public RemoteViews getLoadingView(){return null;}public int getViewTypeCount(){return 1;}public long getItemId(int p){return p<tasks.size()?tasks.get(p).id:p;}public boolean hasStableIds(){return true;}
+ }
+}
