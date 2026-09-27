@@ -1,14 +1,26 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="20dp" android:background="#FFFFFF">
- <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="My Tasks" android:textStyle="bold" android:textSize="30sp" android:textColor="#111111" android:paddingBottom="16dp"/>
- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-  <EditText android:id="@+id/input" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="Add a task" android:singleLine="true"/>
-  <Button android:id="@+id/add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add"/>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/background" android:fillViewport="true">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="My tasks" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/text_primary"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="A calm place for what matters next." android:textSize="14sp" android:textColor="@color/text_muted" android:paddingTop="4dp" android:paddingBottom="22dp"/>
+ <EditText android:id="@+id/input" android:layout_width="match_parent" android:layout_height="52dp" android:hint="What needs doing?" android:textColor="@color/text_primary" android:textColorHint="@color/text_muted" android:singleLine="true" android:background="@drawable/input_bg" android:paddingHorizontal="16dp"/>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingTop="10dp">
+  <EditText android:id="@+id/dueInput" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:hint="Due date" android:singleLine="true" android:background="@drawable/input_bg" android:paddingHorizontal="12dp"/>
+  <Space android:layout_width="8dp" android:layout_height="1dp"/>
+  <EditText android:id="@+id/tagInput" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:hint="Tag" android:singleLine="true" android:background="@drawable/input_bg" android:paddingHorizontal="12dp"/>
  </LinearLayout>
- <RadioGroup android:id="@+id/priority" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="12dp">
+ <EditText android:id="@+id/notesInput" android:layout_width="match_parent" android:layout_height="72dp" android:layout_marginTop="10dp" android:hint="Notes (optional)" android:gravity="top" android:background="@drawable/input_bg" android:padding="12dp"/>
+ <RadioGroup android:id="@+id/priority" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingTop="8dp">
   <RadioButton android:id="@+id/high" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="High"/>
   <RadioButton android:id="@+id/medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medium" android:checked="true"/>
   <RadioButton android:id="@+id/low" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Low"/>
  </RadioGroup>
- <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Double-tap a card to complete • Long-press to delete" android:textColor="#777777" android:paddingBottom="12dp"/>
- <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"><LinearLayout android:id="@+id/list" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/></ScrollView>
-</LinearLayout>
+ <Button android:id="@+id/add" android:layout_width="match_parent" android:layout_height="50dp" android:text="Add task" android:textAllCaps="false"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="VIEW" android:textSize="11sp" android:textStyle="bold" android:letterSpacing=".12" android:textColor="@color/text_muted" android:paddingTop="22dp" android:paddingBottom="6dp"/>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+  <Spinner android:id="@+id/sizeSpinner" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:background="@drawable/input_bg"/>
+  <Space android:layout_width="8dp" android:layout_height="1dp"/>
+  <Spinner android:id="@+id/styleSpinner" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1" android:background="@drawable/input_bg"/>
+ </LinearLayout>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Double-tap to complete  •  Long-press to delete" android:textSize="12sp" android:textColor="@color/text_muted" android:paddingTop="12dp" android:paddingBottom="12dp"/>
+ <LinearLayout android:id="@+id/list" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/>
+</LinearLayout></ScrollView>
