@@ -1,0 +1,35 @@
+COLOR TODO - BUILD THE APK WITH GITHUB
+======================================
+
+1. Go to github.com and sign in.
+2. Create a NEW repository named: ColorTodo
+   - Public or Private is fine.
+   - Do NOT add a README, .gitignore, or license when creating it.
+3. On the empty repository page choose:
+      "uploading an existing file"
+4. Open the ColorTodo folder from this ZIP.
+5. Upload ALL items inside ColorTodo to the repository.
+   Important: .github is a hidden folder on some computers. Make sure it is uploaded too.
+6. Commit the files to the main branch.
+7. Open the "Actions" tab in GitHub.
+8. Select "Build ColorTodo APK".
+   It normally starts automatically after the upload. If needed, click "Run workflow".
+9. Wait for the build to show a green check mark.
+10. Open that completed workflow run.
+11. Scroll to "Artifacts" and download "ColorTodo-APK".
+12. Unzip that downloaded artifact. Inside is app-debug.apk.
+13. Move app-debug.apk to your Android phone and tap it.
+14. Android may ask you to allow "Install unknown apps" for your browser/files app. Allow it, then install.
+15. Open Color Todo once and add tasks.
+16. To add the widget: long-press an empty area of the home screen > Widgets > Color Todo > drag it to the home screen.
+
+APP CONTROLS
+============
+- + button: add a task and choose High / Medium / Low priority.
+- Double tap a task in the app: mark it completed/uncompleted.
+- Long press a task in the app: delete it.
+- Widget task tap: mark it completed.
+
+NOTE
+====
+This is a debug APK intended for installation on your own phone. Android may show an unknown/developer-app warning because it is not distributed through Google Play.
