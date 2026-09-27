@@ -1,0 +1,5 @@
+<resources>
+ <color name="background">#111310</color><color name="surface">#191C18</color><color name="surface_alt">#20241F</color>
+ <color name="text_primary">#F1F3EE</color><color name="text_secondary">#C5C9C0</color><color name="text_muted">#92988D</color><color name="border">#30352E</color>
+ <color name="accent">#A8C5AC</color><color name="priority_high_surface">#3B2523</color><color name="priority_medium_surface">#3A3220</color><color name="priority_low_surface">#213529</color><color name="task_done">#242824</color>
+</resources>
