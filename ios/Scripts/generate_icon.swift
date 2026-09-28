@@ -1,6 +1,7 @@
 import AppKit
 
-let output = FileManager.default.currentDirectoryPath + "/HeadRoom/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png"
+let root = ProcessInfo.processInfo.environment["SRCROOT"] ?? FileManager.default.currentDirectoryPath
+let output = root + "/HeadRoom/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png"
 let size = NSSize(width: 1024, height: 1024)
 let image = NSImage(size: size)
 image.lockFocus()
