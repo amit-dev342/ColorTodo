@@ -7,9 +7,11 @@ struct NextCardIntent: AppIntent {
 
     func perform() async throws -> some IntentResult {
         let tasks = TaskStore.loadTasks()
+        let hasMissedCard = tasks.contains(where: \.isMissed)
+        let total = tasks.count + (hasMissedCard ? 1 : 0)
         let defaults = TaskStore.defaults()
-        guard !tasks.isEmpty else { return .result() }
-        let next = (defaults.integer(forKey: "widget.index") + 1) % tasks.count
+        guard total > 0 else { return .result() }
+        let next = (defaults.integer(forKey: "widget.index") + 1) % total
         defaults.set(next, forKey: "widget.index")
         WidgetCenter.shared.reloadAllTimelines()
         return .result()
