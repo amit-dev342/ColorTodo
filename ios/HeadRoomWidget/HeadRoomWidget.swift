@@ -1,5 +1,6 @@
 import WidgetKit
 import SwiftUI
+import AppIntents
 
 struct HeadRoomWidgetEntry: TimelineEntry {
     let date: Date
