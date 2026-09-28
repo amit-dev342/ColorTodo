@@ -1,10 +1,11 @@
 import Foundation
+import Combine
 import WidgetKit
 
 @MainActor
 final class TaskStore: ObservableObject {
-    static let suiteName = "group.com.amit.headroom"
-    static let tasksKey = "headroom.tasks"
+    nonisolated static let suiteName = "group.com.amit.headroom"
+    nonisolated static let tasksKey = "headroom.tasks"
 
     @Published private(set) var tasks: [HeadRoomTask] = []
 
