@@ -31,7 +31,7 @@ targets:
     preBuildScripts:
       - name: Generate Head Room app icon
         script: |
-          swift "$SRCROOT/Scripts/generate_icon.swift"
+          env -u SDKROOT xcrun --sdk macosx swift "$SRCROOT/Scripts/generate_icon.swift"
         basedOnDependencyAnalysis: false
     dependencies:
       - target: HeadRoomWidget
