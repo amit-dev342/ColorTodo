@@ -75,6 +75,9 @@ struct TaskCard: View {
         .onTapGesture(count: 2) {
             onToggle()
         }
+        .onLongPressGesture(minimumDuration: 0.55) {
+            onDelete()
+        }
     }
 
     private var cardBackground: some View {
