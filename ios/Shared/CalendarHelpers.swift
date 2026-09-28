@@ -11,6 +11,12 @@ extension Calendar {
 extension HeadRoomTask {
     var schedulingDate: Date { dueDate ?? createdAt }
 
+    var isMissed: Bool {
+        guard !isDone, let dueDate else { return false }
+        let calendar = Calendar.headRoom
+        return calendar.startOfDay(for: dueDate) < calendar.startOfDay(for: Date())
+    }
+
     var weekStart: Date {
         let calendar = Calendar.headRoom
         let components = calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: schedulingDate)
